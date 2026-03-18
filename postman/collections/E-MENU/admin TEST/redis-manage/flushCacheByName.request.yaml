@@ -1,6 +1,0 @@
-$kind: http-request
-url: "{{$baseURL}}/{{$contextPath}}/api/v1/admin/redis/cache/client-credential"
-method: PUT
-headers:
-  Authorization: Bearer {{$system_access_token}}
-order: 11000
