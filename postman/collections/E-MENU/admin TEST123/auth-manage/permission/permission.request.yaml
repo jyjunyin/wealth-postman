@@ -1,0 +1,17 @@
+$kind: http-request
+url: "{{$baseURL}}/{{$contextPath}}/api/v1/admin/permissions"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: Bearer {{$system_access_token}}
+body:
+  type: json
+  content: |-
+    {
+        "code": "USER:CREATE",
+        "name": "Create User",
+        "resource": "USER",
+        "action": "CREATE",
+        "category": "USERS"
+      }
+order: 1000

@@ -1,0 +1,19 @@
+$kind: http-request
+url: "{{$baseURL}}/{{$contextPath}}/api/v1/admin/roles"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: Bearer {{$system_access_token}}
+body:
+  type: json
+  content: |-
+    {
+        "code": "MERCHANT",
+        "name": "Merchant Owner",
+        "name_kh": "",
+        "description": "Owner store operations",
+        "level": 60,
+        "is_system_role": false,
+        "permission_ids": [1]
+      }
+order: 1000

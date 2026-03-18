@@ -1,0 +1,8 @@
+$kind: http-request
+url: "{{$baseURL}}/{{$contextPath}}/api/v1/admin/redis/keys?pattern=lovValues*"
+method: GET
+headers:
+  Authorization: Bearer {{$system_access_token}}
+queryParams:
+  pattern: lovValues*
+order: 5000
