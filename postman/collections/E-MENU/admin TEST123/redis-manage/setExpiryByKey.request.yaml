@@ -1,9 +1,0 @@
-$kind: http-request
-url: "{{$baseURL}}/{{$contextPath}}/api/v1/admin/redis/key/client-credential::a\
-  bc123/ttl?seconds=300"
-method: PUT
-headers:
-  Authorization: Bearer {{$system_access_token}}
-queryParams:
-  seconds: "300"
-order: 10000
