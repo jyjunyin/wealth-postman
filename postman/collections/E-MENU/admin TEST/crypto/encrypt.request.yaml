@@ -1,0 +1,19 @@
+$kind: http-request
+url: "{{$baseURL}}/{{$contextPath}}/api/v1/admin/crypto/encrypt"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: Bearer {{$system_access_token}}
+body:
+  type: text
+  content: |-
+    {
+        "plain_text": "Pwd@1234"
+    }
+scripts:
+  - type: afterResponse
+    code: |
+      var response = JSON.parse(responseBody);
+      pm.environment.set("$value_encrypted", response.data.encrypted);
+    language: text/javascript
+order: 1000
