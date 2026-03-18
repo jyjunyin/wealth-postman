@@ -1,0 +1,16 @@
+$kind: http-request
+url: "{{$baseURL}}/{{$contextPath}}/api/v1/mobile/public/preload"
+method: GET
+headers:
+  Content-Type: application/json
+  client_id: "{{$clientID}}"
+  client_secret: "{{$clientSecret}}"
+  device_id: MKR-DEVICE-97
+  Authorization: Bearer {{$access_token}}
+scripts:
+  - type: afterResponse
+    code: |
+      var response = JSON.parse(responseBody);
+      pm.environment.set("$access_token", response.data.token);
+    language: text/javascript
+order: 1000

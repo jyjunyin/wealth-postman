@@ -1,0 +1,8 @@
+$kind: http-request
+url: "{{$baseURL}}/{{$contextPath}}/api/v1/admin/redis/keys?pattern=publicPreload*"
+method: DELETE
+headers:
+  Authorization: Bearer {{$system_access_token}}
+queryParams:
+  pattern: publicPreload*
+order: 9000

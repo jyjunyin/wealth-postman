@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{$healthBaseUrl}}/{{$contextPath}}/actuator/info"
+method: GET
+order: 2000

@@ -1,0 +1,13 @@
+$kind: http-request
+url: "{{$baseURL}}/{{$contextPath}}/api/v1/admin/lov/value?key=MOBILE_MERCHANT_\
+  FEATURE_FLAGS&channel=MOBILE_MERCHANT"
+method: GET
+headers:
+  Content-Type: application/json
+  client_id: "{{$systemClientID}}"
+  client_secret: "{{$systemClientSecret}}"
+  device_id: MKR-DEVICE-97
+queryParams:
+  key: MOBILE_MERCHANT_FEATURE_FLAGS
+  channel: MOBILE_MERCHANT
+order: 3000

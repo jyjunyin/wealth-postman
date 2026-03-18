@@ -1,0 +1,27 @@
+$kind: http-request
+url: "{{$baseURL}}/{{$contextPath}}/api/v1/admin/lov"
+method: POST
+headers:
+  Content-Type: application/json
+  client_id: "{{$systemClientID}}"
+  client_secret: "{{$systemClientSecret}}"
+  device_id: MKR-DEVICE-97
+body:
+  type: json
+  content: |-
+    {
+      "key": "mobile_merchant_feature_flags",
+      "channel": "MOBILE_MERCHANT",
+      "is_reload_lang": false,
+      "is_external_service": false,
+      "service": null,
+      "path": null,
+      "method": null,
+      "value": {
+        "enable_biometric_login": true,
+        "enable_new_onboarding": false,
+        "enable_dark_mode": false,
+        "enable_guest_checkout": false
+      }
+    }
+order: 1000

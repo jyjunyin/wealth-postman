@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{$healthBaseUrl}}/{{$contextPath}}/actuator/refresh"
+method: POST
+order: 3000

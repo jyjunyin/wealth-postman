@@ -1,0 +1,21 @@
+$kind: http-request
+url: "{{$baseURL}}/{{$contextPath}}/api/v1/admin/client-credentials"
+method: POST
+headers:
+  Authorization: Bearer <your-jwt-token>
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+        "channel": "SYSTEM_ADMIN",
+        "client_name": "System Admin",
+        "redirect_uri": null,
+        "grant_type": "client_credentials",
+        "scope": "read write",
+        "access_token_timeout": 3600,
+        "refresh_token_timeout": 86400,
+        "ip_whitelist": null,
+        "skip_validate_ip": true
+      }
+order: 2000

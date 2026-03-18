@@ -1,0 +1,6 @@
+$kind: http-request
+url: "{{$baseURL}}/{{$contextPath}}/api/v1/admin/redis/flushdb"
+method: PUT
+headers:
+  Authorization: Bearer {{$system_access_token}}
+order: 12000

@@ -1,0 +1,20 @@
+$kind: http-request
+url: "{{$baseURL}}/{{$contextPath}}/api/v1/users"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: Bearer {{$system_access_token}}
+body:
+  type: json
+  content: |-
+    {
+        "username": "merchant123",
+        "password": "{{$value_encrypted}}",
+        "user_type": "MERCHANT",
+        "merchant_id": 1,
+        "is_admin_role": false,
+        "locale": "en",
+        "timezone": "Asia/Phnom_Penh",
+        "role_ids": [1]
+      }
+order: 1000

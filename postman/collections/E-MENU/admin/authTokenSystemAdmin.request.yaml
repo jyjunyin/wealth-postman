@@ -1,0 +1,21 @@
+$kind: http-request
+url: "{{$baseURL}}/{{$contextPath}}/api/v1/auth/token"
+method: POST
+headers:
+  Content-Type: application/json
+  client_id: "{{$systemClientID}}"
+  client_secret: "{{$systemClientSecret}}"
+  device_id: MKR-DEVICE-97
+body:
+  type: json
+  content: |-
+    {
+        "grant_type": "client_credentials"
+    }
+scripts:
+  - type: afterResponse
+    code: |
+      var response = JSON.parse(responseBody);
+      pm.environment.set("$system_access_token", response.data.access_token);
+    language: text/javascript
+order: 5000

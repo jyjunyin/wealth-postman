@@ -1,0 +1,7 @@
+$kind: http-request
+url: "{{$baseURL}}/{{$contextPath}}/api/v1/admin/redis/key/client-credential::w\
+  lth_e6442b3c24774dc78121e16eefc"
+method: GET
+headers:
+  Authorization: Bearer {{$system_access_token}}
+order: 6000
